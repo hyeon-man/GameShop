@@ -18,7 +18,6 @@ public class GameRestController {
     @GetMapping
     public List<Game> list(Pager pager) {
         return service.list(pager);
-
     }
 
     @PostMapping
