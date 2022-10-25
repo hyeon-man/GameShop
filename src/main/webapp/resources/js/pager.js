@@ -1,3 +1,4 @@
+
 function make_row(item) {
     const tr = $("<tr>");
 
@@ -27,7 +28,7 @@ function make_row(item) {
     const td_url = $("<td>")
     // update
     td_url.addClass("url");
-    // ==
+    //
     td_url.text(item.url);
     tr.append(td_url);
 
