@@ -28,45 +28,59 @@ $(function () {
             // S ---> O
             /*const list =  JSON.parse(result);*/
 
-            result.forEach(item => {
-                const tr = $("<tr>");
+            // if(result.length >= 1 ) {
+            //     $("#list").html("");
 
-                tr.attr("data-id", item.id);
+                if(result.length > 0)
+                    $(".empty_list").addClass("empty_list");
+                else
+                    $(".empty_list").removeClass("empty_list");
 
-                const td_id = $("<td>");
-                td_id.text(item.id);
-                tr.append(td_id);
+                result.forEach(item => {
 
-                const td_name = $("<td>")
-                td_name.text(item.name);
-                tr.append(td_name);
+                    const tr = $("<tr>");
 
-                const td_nameEng = $("<td>")
-                td_nameEng.text(item.nameEng);
-                tr.append(td_nameEng);
+                    tr.attr("data-id", item.id);
 
-                const td_url = $("<td>")
-                td_url.text(item.url);
-                tr.append(td_url);
+                    const td_id = $("<td>");
+                    td_id.text(item.id);
+                    tr.append(td_id);
 
-                const td_manager = $("<td>")
+                    const td_name = $("<td>")
+                    td_name.text(item.name);
+                    tr.append(td_name);
 
-                const button_update = $("<button>")
-                button_update.text("변경");
-                button_update.addClass("update");
-                td_manager.append(button_update);
+                    const td_nameEng = $("<td>")
+                    td_nameEng.text(item.nameEng);
+                    tr.append(td_nameEng);
 
-                const button_delete = $("<button>")
-                button_delete.text("삭제");
-                button_delete.addClass("delete");
-                td_manager.append(button_delete);
+                    const td_url = $("<td>")
+                    td_url.text(item.url);
+                    tr.append(td_url);
 
-                tr.append(td_manager);
+                    const td_manager = $("<td>")
 
-                $("#list").append(tr);
-            });
+                    const button_update = $("<button>")
+                    button_update.text("변경");
+                    button_update.addClass("update");
+                    td_manager.append(button_update);
 
+                    const button_delete = $("<button>")
+                    button_delete.text("삭제");
+                    button_delete.addClass("delete");
+                    td_manager.append(button_delete);
+
+                    tr.append(td_manager);
+
+                    $("#list").append(tr);
+
+                });
+            // }
+            // else {
+            //     return
+            // }
             console.log(result);
+
         },
         // error :
     });
