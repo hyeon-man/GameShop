@@ -37,7 +37,6 @@ public class GameServiceImpl implements GameService {
         dao.add(item);
 
         if (item.getAttachs() != null) {
-
             for (Attach attach : item.getAttachs()) {
                 attach.setGameId(item.getId());
 
